@@ -13,6 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+//
+Route::get('/', [\App\Http\Controllers\HomeController::class,'principal'])->name('home.index');
+Route::get('/login', [\App\Http\Controllers\LoginAdminController::class,'login'])->name('admin.login');
+Route::get('/evento', [\App\Http\Controllers\EventoController::class,'evento'])->name('home.evento');
+Route::get('/dados_evento', [\App\Http\Controllers\DadosEventoController::class,'dados_evento'])->name('user.dados_evento');
+Route::post('/dados_evento', [\App\Http\Controllers\DadosEventoController::class,'dados_evento'])->name('user.dados_evento');
+Route::get('/registro_presenca', [\App\Http\Controllers\RegistroPresencaController::class,'registro_presenca'])->name('home.registro_presenca');
+
+Route::prefix('/admin')->group(function(){
+    Route::get('/relatorio_evento', [\App\Http\Controllers\RelatorioEventoController::class,'relatorio_evento'])->name('admin.relatorio_evento');
+    Route::get('/relatorio_presenca', [\App\Http\Controllers\RelatorioPresencaController::class,'relatorio_presenca'])->name('admin.relatorio_presenca');
+    Route::get('/homologacao', [\App\Http\Controllers\HomologacaoController::class,'homologacao'])->name('admin.homologacao');
 });

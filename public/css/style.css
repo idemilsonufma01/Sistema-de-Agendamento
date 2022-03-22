@@ -1,0 +1,49 @@
+body{
+    background-color: rgba(245, 247, 239, 0.986);
+}
+h1 {
+    color: red;
+    text-align: center;
+}
+
+header {
+    margin-bottom: 80px;
+    padding-bottom: 10px;
+
+    border: 1px solid red;
+    text-align: center;
+}
+
+.container-principal {
+    width: 350px;
+    height: 500px;
+    border: 1px solid rgb(211, 148, 148);
+    margin: auto;
+    background-color: rgb(79, 195, 2);
+    
+
+}
+
+fieldset {
+    height: 300px;
+    border: 1px solid green;
+    margin: auto;
+    text-align: center;
+}
+
+.container-usuario, .container-senha {
+    padding: 10px;
+}
+.borda-branca {
+    border: 1px solid rgb(165, 8, 8);
+}
+.borda-verde {
+    border: 1px solid rgb(128, 0, 90);
+}
+
+footer {
+    margin-top: 80px;
+    padding-top: 10px;
+    border: 1px solid black;
+    text-align: center;
+}
