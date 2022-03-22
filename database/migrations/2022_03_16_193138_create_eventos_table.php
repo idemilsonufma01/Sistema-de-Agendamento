@@ -24,6 +24,13 @@ return new class extends Migration
             $table->string('email', 80);
             $table->string('telefone', 20);
         });
+
+         //adicionar o relacionamento com a tabela registro_presencas
+
+         Schema::table('registro__presencas', function(Blueprint $table){
+            $table->unsignedBigInteger('evento_id');
+            $table->foreign('evento_id')->references('id')->on('eventos');
+        });
     }
 
     /**
@@ -33,6 +40,15 @@ return new class extends Migration
      */
     public function down()
     {
+         //remover o relacionamento com a tabela registro__presencas
+         Schema::table('registro__presencas', function(Blueprint $table){
+            //remover FK
+            $table->dropForeign('registro__presencas_evento_id_foreign'); //[table]_[column]_foreign
+            //remover coluna evento_id
+            $table->dropColumn('evento_id');
+                
+        });
+
         Schema::dropIfExists('eventos');
     }
 };
