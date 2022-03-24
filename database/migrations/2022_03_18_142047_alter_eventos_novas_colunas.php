@@ -25,8 +25,11 @@ return new class extends Migration
      * @return void
      */
     public function down()
-    {
+    {   
+
         //para remover colunas
+        Schema::table('eventos', function(Blueprint $table){
         $table->dropColumn('qt_pessoas');
+        });
     }
 };
