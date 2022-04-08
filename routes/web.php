@@ -18,7 +18,7 @@ Route::get('/', [\App\Http\Controllers\HomeController::class,'principal'])->name
 Route::get('/login', [\App\Http\Controllers\LoginAdminController::class,'login'])->name('admin.login');
 Route::get('/evento', [\App\Http\Controllers\EventoController::class,'evento'])->name('home.evento');
 Route::get('/dados_evento', [\App\Http\Controllers\DadosEventoController::class,'dados_evento'])->name('user.dados_evento');
-Route::post('/dados_evento', [\App\Http\Controllers\DadosEventoController::class,'dados_evento'])->name('user.dados_evento');
+Route::post('/dados_evento', [\App\Http\Controllers\DadosEventoController::class,'salvar'])->name('user.salvar');
 Route::get('/registro_presenca', [\App\Http\Controllers\RegistroPresencaController::class,'registro_presenca'])->name('home.registro_presenca');
 
 Route::prefix('/admin')->group(function(){
